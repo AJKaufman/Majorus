@@ -6,11 +6,11 @@ public class Base : MonoBehaviour {
 
   public int money;
   public float mana;
-  public String[] Swords = ["Maramusa", "Scarred Cleaver", "Mutton Chop", "Massive Lance", "Agile Corsair", "Equalizer"];
+  public string[] Swords = {"Maramusa", "Scarred Cleaver", "Mutton Chop", "Massive Lance", "Agile Corsair", "Equalizer"};
 
   // Use this for initialization
   void Start () {
-
+    Debug.Log("Pass me my " + GetRandomSword());
   }
 
   // Update is called once per frame
@@ -19,8 +19,9 @@ public class Base : MonoBehaviour {
   }
 
   // Get a sword
-  public String GetRandomSword() {
-    
+  public string GetRandomSword() {
+    float max = (float)Swords.Length;
+    return Swords[Random.Range(0.0f, max)];
   }
     
 }
